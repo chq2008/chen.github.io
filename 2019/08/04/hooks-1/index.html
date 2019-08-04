@@ -15,18 +15,18 @@
     <meta name="keywords" content="前端,React,">
   
 
-  <meta name="description" content="最近由于某些机缘巧合的原因在写前端，由于项目被React重构，而且用的还是最新的React技术Hooks，由于之前只简单了解过React，趁着这次机会系统的学习一下Hooks，强化一下前端的知识。  Hooks是什么hooks是React16.8的新特性，是去年React团队推出的新特性，今年年初已经被稳定支持，可谓是非常时髦的一个知识点。hooks可以用函数组件来替换类组件，并且在函数组件中使">
+  <meta name="description" content="最近由于某些机缘巧合的原因在写前端，由于项目被React重构，而且用的还是最新的React技术Hooks，由于之前只简单了解过React，趁着这次机会系统的学习一下Hooks，强化一下前端的知识。  1.Hooks是什么hooks是React16.8的新特性，是去年React团队推出的新特性，今年年初已经被稳定支持，可谓是非常时髦的一个知识点。hooks可以用函数组件来替换类组件，并且在函数组件">
 <meta name="keywords" content="前端,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React新特性Hooks">
 <meta property="og:url" content="http://yoursite.com/2019/08/04/hooks-1/index.html">
 <meta property="og:site_name" content="沧源远的博客">
-<meta property="og:description" content="最近由于某些机缘巧合的原因在写前端，由于项目被React重构，而且用的还是最新的React技术Hooks，由于之前只简单了解过React，趁着这次机会系统的学习一下Hooks，强化一下前端的知识。  Hooks是什么hooks是React16.8的新特性，是去年React团队推出的新特性，今年年初已经被稳定支持，可谓是非常时髦的一个知识点。hooks可以用函数组件来替换类组件，并且在函数组件中使">
+<meta property="og:description" content="最近由于某些机缘巧合的原因在写前端，由于项目被React重构，而且用的还是最新的React技术Hooks，由于之前只简单了解过React，趁着这次机会系统的学习一下Hooks，强化一下前端的知识。  1.Hooks是什么hooks是React16.8的新特性，是去年React团队推出的新特性，今年年初已经被稳定支持，可谓是非常时髦的一个知识点。hooks可以用函数组件来替换类组件，并且在函数组件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-04T13:31:26.399Z">
+<meta property="og:updated_time" content="2019-08-04T14:39:01.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React新特性Hooks">
-<meta name="twitter:description" content="最近由于某些机缘巧合的原因在写前端，由于项目被React重构，而且用的还是最新的React技术Hooks，由于之前只简单了解过React，趁着这次机会系统的学习一下Hooks，强化一下前端的知识。  Hooks是什么hooks是React16.8的新特性，是去年React团队推出的新特性，今年年初已经被稳定支持，可谓是非常时髦的一个知识点。hooks可以用函数组件来替换类组件，并且在函数组件中使">
+<meta name="twitter:description" content="最近由于某些机缘巧合的原因在写前端，由于项目被React重构，而且用的还是最新的React技术Hooks，由于之前只简单了解过React，趁着这次机会系统的学习一下Hooks，强化一下前端的知识。  1.Hooks是什么hooks是React16.8的新特性，是去年React团队推出的新特性，今年年初已经被稳定支持，可谓是非常时髦的一个知识点。hooks可以用函数组件来替换类组件，并且在函数组件">
 
   
 
@@ -171,7 +171,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hooks是什么"><span class="toc-text">Hooks是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#hooks优点"><span class="toc-text">hooks优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hooks缺点"><span class="toc-text">hooks缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何使用"><span class="toc-text">如何使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useState"><span class="toc-text">useState</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useEffect"><span class="toc-text">useEffect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useContext"><span class="toc-text">useContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useMemo、useCallback"><span class="toc-text">useMemo、useCallback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useRef"><span class="toc-text">useRef</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hooks的规则"><span class="toc-text">Hooks的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Hooks是什么"><span class="toc-text">1.Hooks是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#hooks优点"><span class="toc-text">hooks优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hooks缺点"><span class="toc-text">hooks缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何使用"><span class="toc-text">如何使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-useState"><span class="toc-text">2.useState</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-useEffect"><span class="toc-text">3.useEffect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-useContext"><span class="toc-text">4.useContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-useMemo、useCallback"><span class="toc-text">5.useMemo、useCallback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-useRef"><span class="toc-text">6.useRef</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Hooks的规则"><span class="toc-text">7.Hooks的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-总结"><span class="toc-text">8.总结</span></a></li></ol>
   </div>
 
 
@@ -209,7 +209,7 @@ ga('send', 'pageview');
       <blockquote>
 <p>最近由于某些机缘巧合的原因在写前端，由于项目被React重构，而且用的还是最新的React技术Hooks，由于之前只简单了解过React，趁着这次机会系统的学习一下Hooks，强化一下前端的知识。</p>
 </blockquote>
-<h2 id="Hooks是什么"><a href="#Hooks是什么" class="headerlink" title="Hooks是什么"></a>Hooks是什么</h2><p>hooks是React16.8的新特性，是去年React团队推出的新特性，今年年初已经被稳定支持，可谓是非常时髦的一个知识点。hooks可以用函数组件来替换类组件，并且在函数组件中使用新方法来代替一系列的生命周期方法。</p>
+<h2 id="1-Hooks是什么"><a href="#1-Hooks是什么" class="headerlink" title="1.Hooks是什么"></a>1.Hooks是什么</h2><p>hooks是React16.8的新特性，是去年React团队推出的新特性，今年年初已经被稳定支持，可谓是非常时髦的一个知识点。hooks可以用函数组件来替换类组件，并且在函数组件中使用新方法来代替一系列的生命周期方法。</p>
 <h4 id="hooks优点"><a href="#hooks优点" class="headerlink" title="hooks优点"></a>hooks优点</h4><ul>
 <li>hooks完全可选，即想用就可以在自己项目中使用，不想用也不必须去学习，react没有废除class组件的想法，也就是说hooks并不是一门必学的课程。</li>
 <li>向后兼容，你可以在项目中一处使用，并不会导致你的项目整体不能使用，以前的语法和hooks并不冲突，你可以一点一点迁移到hooks上来。</li>
@@ -218,56 +218,56 @@ ga('send', 'pageview');
 <li>并不能完全复现生命周期，hooks只不过将最常见的生命周期复现，但是还有一部分需要使用类组件来应用。</li>
 </ul>
 <h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><p>在react版本16.8及以上便可</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br></pre></td></tr></table></figure>
 
-<h2 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h2><p>简单的例子</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [count, setCount] = useState(<span class="number">10</span>);</span><br><span class="line">onClick = &#123;() =&gt; setCount(count + <span class="number">1</span>)&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-useState"><a href="#2-useState" class="headerlink" title="2.useState"></a>2.useState</h2><p>简单的例子</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const [count, setCount] = useState(10);</span><br><span class="line">onClick = &#123;() =&gt; setCount(count + 1)&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>count是state</li>
 <li>setCount来更新state</li>
 <li>useState(10), 设置count默认值为10</li>
 </ol>
-<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><p><code>useEffect</code>实现了<code>componentDidMount</code>，<code>componentDidUpdate</code>和<code>componentWillUnmount</code>三种副作用。</p>
+<h2 id="3-useEffect"><a href="#3-useEffect" class="headerlink" title="3.useEffect"></a>3.useEffect</h2><p><code>useEffect</code>实现了<code>componentDidMount</code>，<code>componentDidUpdate</code>和<code>componentWillUnmount</code>三种副作用。</p>
 <p>当组件被更新时，<code>useEffect</code>会在render之后被调用，如果想要当变量值变化就更新组件，只需在第二个参数传入一个数组即可。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.title = <span class="string">`You clicked <span class="subst">$&#123;count&#125;</span> times`</span></span><br><span class="line">&#125;, [count])</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.title = <span class="string">`You clicked <span class="subst">$&#123;count&#125;</span> times`</span></span><br><span class="line">&#125;, [count])</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>第二个参数不传，每次渲染后都执行。</li>
 <li>传一个空数组的话，只会执行一次。</li>
 </ul>
 <p>如果想要在组件被销毁前触发，需要加上回调函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 此处相当于componentWillUnmount,来进行一些组件销毁时的操作</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 此处相当于componentWillUnmount,来进行一些组件销毁时的操作</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h2 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h2><p>Context在类组件中可以跨组件传递，避免一层一层传递，如果在hooks中使用context，用<code>useContext</code>即可，非常简单。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count = useContext(xxxContext)</span><br></pre></td></tr></table></figure>
+<h2 id="4-useContext"><a href="#4-useContext" class="headerlink" title="4.useContext"></a>4.useContext</h2><p>Context在类组件中可以跨组件传递，避免一层一层传递，如果在hooks中使用context，用<code>useContext</code>即可，非常简单。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> count = useContext(xxxContext)</span><br></pre></td></tr></table></figure>
 
 <p>相比较类组件中的ContextType，函数组件可以使用多个<code>useContext</code>。</p>
-<h2 id="useMemo、useCallback"><a href="#useMemo、useCallback" class="headerlink" title="useMemo、useCallback"></a>useMemo、useCallback</h2><p>类组件中对指定组件渲染是用PureComponent，这样可以避免组件重复渲染，通过判断传入的属性值是否相等。</p>
+<h2 id="5-useMemo、useCallback"><a href="#5-useMemo、useCallback" class="headerlink" title="5.useMemo、useCallback"></a>5.useMemo、useCallback</h2><p>类组件中对指定组件渲染是用PureComponent，这样可以避免组件重复渲染，通过判断传入的属性值是否相等。</p>
 <p>在函数组件中，使用memo，见下例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Count = memo(<span class="function"><span class="keyword">function</span> <span class="title">Count</span>(<span class="params"></span>) =&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> Count = memo(<span class="function"><span class="keyword">function</span> <span class="title">Count</span>(<span class="params"></span>) =&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <p><code>useMemo</code>和memo相比，可以判断一段函数逻辑是否重复执行。<br>使用方法和memo相似</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> count = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>
 
 <p>其中第二个参数和<code>useEffect</code>使用逻辑一样，而与<code>useEffect</code>不同，<code>useEffect</code>在渲染之后运行，而<code>useMemo</code>在渲染期间完成。</p>
 <p>当<code>useMemo</code>返回的是函数，可以直接用<code>useCallback</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>
 
 <p><code>useMemo(() =&gt; fn)</code> 等价于 <code>useCallback(fn)</code></p>
-<h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><p><code>useRef</code>使用有两种场景：</p>
+<h2 id="6-useRef"><a href="#6-useRef" class="headerlink" title="6.useRef"></a>6.useRef</h2><p><code>useRef</code>使用有两种场景：</p>
 <ol>
 <li>获取字组件、DOM元素</li>
 <li>同步不同渲染周期需要共享的数据</li>
 </ol>
 <p>例如</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.</span></span><br><span class="line"><span class="keyword">const</span> countRef = useRef();</span><br><span class="line">&lt;Counter ref = &#123;countRef&#125; /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.</span></span><br><span class="line">count it = useRef();</span><br><span class="line"><span class="comment">// 赋值</span></span><br><span class="line">it.current = <span class="number">123</span></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">it.current</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.</span></span><br><span class="line"><span class="keyword">const</span> countRef = useRef();</span><br><span class="line">&lt;Counter ref = &#123;countRef&#125; /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.</span></span><br><span class="line">count it = useRef();</span><br><span class="line"><span class="comment">// 赋值</span></span><br><span class="line">it.current = <span class="number">123</span></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">it.current</span><br></pre></td></tr></table></figure>
 
-<h2 id="Hooks的规则"><a href="#Hooks的规则" class="headerlink" title="Hooks的规则"></a>Hooks的规则</h2><p>hooks有使用规则，我们必须按照规则严格使用，不然程序会出现各种各样的问题，还好这些规则十分简单。</p>
+<h2 id="7-Hooks的规则"><a href="#7-Hooks的规则" class="headerlink" title="7.Hooks的规则"></a>7.Hooks的规则</h2><p>hooks有使用规则，我们必须按照规则严格使用，不然程序会出现各种各样的问题，还好这些规则十分简单。</p>
 <ol>
 <li>需要函数组件最顶层使用</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// top-level顶层</span></span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useCount(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// top-level顶层</span></span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useCount(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li><p>不允许在循环或者判断语句中使用</p>
@@ -279,7 +279,7 @@ ga('send', 'pageview');
 <p>当你定义一个函数开头使用use，那么就是一个hooks</p>
 </li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在学go中过程中，go就摒弃了类的实现，一开始也很不习惯，后来发现用的还舒心。react中的类组件因为逻辑状态复杂，难以理解，生命周期逻辑混乱，所以才诞生出hooks。</p>
+<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8.总结"></a>8.总结</h2><p>在学go中过程中，go就摒弃了类的实现，一开始也很不习惯，后来发现用的还舒心。react中的类组件因为逻辑状态复杂，难以理解，生命周期逻辑混乱，所以才诞生出hooks。</p>
 <p>虽然hooks还无法完全取代class，但hooks的诞生能应用在日常项目中的绝大多数环境下，取代使用最频繁的生命周期场景，使代码的可读性更强，用法更简便，已经足够了。</p>
 
     
