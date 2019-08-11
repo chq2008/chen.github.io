@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>flex布局 | 沧源远的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="前端,css,">
+  
+
+  <meta name="description" content="最近由于某些机缘巧合的原因在写css，感觉真是从零开始写，记得上次写css还是刚开始学编程的时候，然后2年没接触过css了，工作虽然有写过js方面但是css的知识还局限在盒子模型那块，只会写写border，margin等等；自己的项目也是拿别人封装好的ui就用，比如bootstrap和antd。说实话，我还是挺讨厌写css的。当然讨厌归讨厌，这次讲的是比较流行而且简单的flex布局。  1.Fl">
+<meta name="keywords" content="前端,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flex布局">
+<meta property="og:url" content="http://yoursite.com/2019/08/11/flex/index.html">
+<meta property="og:site_name" content="沧源远的博客">
+<meta property="og:description" content="最近由于某些机缘巧合的原因在写css，感觉真是从零开始写，记得上次写css还是刚开始学编程的时候，然后2年没接触过css了，工作虽然有写过js方面但是css的知识还局限在盒子模型那块，只会写写border，margin等等；自己的项目也是拿别人封装好的ui就用，比如bootstrap和antd。说实话，我还是挺讨厌写css的。当然讨厌归讨厌，这次讲的是比较流行而且简单的flex布局。  1.Fl">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://static.cangyuanyuan.com/flex-direction.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/flex-wrap.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/justify-countent.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/align-items.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/align-content.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/flex-order.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/flex-grow.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/align-self.png">
+<meta property="og:updated_time" content="2019-08-11T15:35:08.236Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flex布局">
+<meta name="twitter:description" content="最近由于某些机缘巧合的原因在写css，感觉真是从零开始写，记得上次写css还是刚开始学编程的时候，然后2年没接触过css了，工作虽然有写过js方面但是css的知识还局限在盒子模型那块，只会写写border，margin等等；自己的项目也是拿别人封装好的ui就用，比如bootstrap和antd。说实话，我还是挺讨厌写css的。当然讨厌归讨厌，这次讲的是比较流行而且简单的flex布局。  1.Fl">
+<meta name="twitter:image" content="http://static.cangyuanyuan.com/flex-direction.png">
+
+  
+
+  
+    <link rel="icon" href="/images/博客.png">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-142874240-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?189f90ebbb4e5a9a36610fa3d1bd9b87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">展开</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">展开</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Flex布局"><span class="toc-text">1.Flex布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-容器属性"><span class="toc-text">2.容器属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-flex-direction"><span class="toc-text">2.1 flex-direction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-flex-wrap"><span class="toc-text">2.2 flex-wrap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-flex-flow"><span class="toc-text">2.3 flex-flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-justify-content"><span class="toc-text">2.4 justify-content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-align-items"><span class="toc-text">2.5 align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-align-content"><span class="toc-text">2.6 align-content</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-项目属性"><span class="toc-text">3.项目属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-order"><span class="toc-text">3.1 order</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-flex-grow"><span class="toc-text">3.2 flex-grow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-flex-shrink"><span class="toc-text">3.3 flex-shrink</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-flex-basis"><span class="toc-text">3.4 flex-basis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-flex"><span class="toc-text">3.5 flex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-align-self"><span class="toc-text">3.6 align-self</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-后记"><span class="toc-text">4.后记</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-flex" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">flex布局</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.08.11</span>
+      </span>
+
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </span>
+
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <blockquote>
+<p>最近由于某些机缘巧合的原因在写css，感觉真是从零开始写，记得上次写css还是刚开始学编程的时候，然后2年没接触过css了，工作虽然有写过js方面但是css的知识还局限在盒子模型那块，只会写写border，margin等等；自己的项目也是拿别人封装好的ui就用，比如bootstrap和antd。说实话，我还是挺讨厌写css的。当然讨厌归讨厌，这次讲的是比较流行而且简单的flex布局。</p>
+</blockquote>
+<h1 id="1-Flex布局"><a href="#1-Flex布局" class="headerlink" title="1.Flex布局"></a>1.Flex布局</h1><p>flex布局是09年提出的一种弹性布局，使得布局变的异常方便，比如我就用的乐不释手。</p>
+<p>声明一个flex布局也很简单</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;  <span class="comment">/* or inline-flex */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>flex使弹性容器成为块级元素，inline-flex使弹性容器成为单个不可分的行内级元素。</p>
+<p>在使用flex布局后，float、clear和vertical-align属性会失效。</p>
+<h1 id="2-容器属性"><a href="#2-容器属性" class="headerlink" title="2.容器属性"></a>2.容器属性</h1><p>一共有以下6种。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flex-direction</span><br><span class="line">flex-wrap</span><br><span class="line">flex-flow</span><br><span class="line">justify-content</span><br><span class="line">align-itmes</span><br><span class="line">align-content</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-1-flex-direction"><a href="#2-1-flex-direction" class="headerlink" title="2.1 flex-direction"></a>2.1 flex-direction</h3><p><img src="http://static.cangyuanyuan.com/flex-direction.png" alt="direction"></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>row</code>: 默认值，沿着横轴从左到右。<br><code>row-reverse</code>: 沿着横轴从右到左。<br><code>column</code>: 沿着纵轴从上到下。<br><code>column-reverse</code>: 沿着纵轴从下到上。</p>
+<hr>
+<h3 id="2-2-flex-wrap"><a href="#2-2-flex-wrap" class="headerlink" title="2.2 flex-wrap"></a>2.2 flex-wrap</h3><p><img src="http://static.cangyuanyuan.com/flex-wrap.png" alt="wrap"></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>nowrap</code>: 默认值，不换行。<br><code>wrap</code>: 换行，值从上到下。<br><code>wrap-reverse</code>: 换行，值从下到上。</p>
+<hr>
+<h3 id="2-3-flex-flow"><a href="#2-3-flex-flow" class="headerlink" title="2.3 flex-flow"></a>2.3 flex-flow</h3><p>是<code>flex-direction</code>和<code>flex-wrap</code>的简写形式。</p>
+<hr>
+<h3 id="2-4-justify-content"><a href="#2-4-justify-content" class="headerlink" title="2.4 justify-content"></a>2.4 justify-content</h3><p><img src="http://static.cangyuanyuan.com/justify-countent.png" alt="justify-content"></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around | space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>flex-start</code>: 默认值, 左对齐。<br><code>flex-end</code>: 右对齐。<br><code>center</code>: 居中。<br><code>space-between</code>: 均匀分布。<br><code>space-around</code>: 每个项目的两侧空间相等。<br><code>space-evenly</code>: 两个项目之间的空间相等。</p>
+<hr>
+<h3 id="2-5-align-items"><a href="#2-5-align-items" class="headerlink" title="2.5 align-items"></a>2.5 align-items</h3><p><img src="http://static.cangyuanyuan.com/align-items.png" alt="align-items"></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: stretch | flex-start | flex-end | center | baseline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>stretch</code>: 默认值，纵轴高度充满容器。<br><code>flex-start</code>: 在交叉轴的起点对齐。<br><code>flex-end</code>: 在交叉轴的终点对齐。<br><code>center</code>: 在交叉轴居中。<br><code>baseline</code>: 项目的基准线对齐。</p>
+<hr>
+<h3 id="2-6-align-content"><a href="#2-6-align-content" class="headerlink" title="2.6 align-content"></a>2.6 align-content</h3><p> <img src="http://static.cangyuanyuan.com/align-content.png" alt="align-content"></p>
+ <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"> <span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意： 只有一个轴线则不会起作用。</p>
+<p><code>flex-start</code>: 交叉轴起点对齐。<br><code>flex-end</code>: 交叉轴终点对齐。<br><code>center</code>: 在交叉中居中。<br><code>space-between</code>: 在纵轴、横轴间隔均匀分布。<br><code>space-around</code>: 每个项目的两侧空间相等。<br><code>stretch</code>: 默认值，充满剩余空间。</p>
+<h1 id="3-项目属性"><a href="#3-项目属性" class="headerlink" title="3.项目属性"></a>3.项目属性</h1><p>一共也有6种。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">order</span><br><span class="line">flex-grow</span><br><span class="line">flex-shrink</span><br><span class="line">flex-basis</span><br><span class="line">flex</span><br><span class="line">align-self</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-1-order"><a href="#3-1-order" class="headerlink" title="3.1 order"></a>3.1 order</h3><p> <img src="http://static.cangyuanyuan.com/flex-order.png" alt="order"></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: &lt;integer&gt;; <span class="comment">/* 默认为 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>order可以定义项目排列顺序，数字越小越靠前。</p>
+<hr>
+<h3 id="3-2-flex-grow"><a href="#3-2-flex-grow" class="headerlink" title="3.2 flex-grow"></a>3.2 flex-grow</h3><p> <img src="http://static.cangyuanyuan.com/flex-grow.png" alt="flex-grow"></p>
+ <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: &lt;integer&gt;; <span class="comment">/* 默认为 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果所有<code>flex-grow</code>元素设置为1，那么平分空间，如果有一共设置为2，则占据两倍空间。</p>
+<hr>
+<h3 id="3-3-flex-shrink"><a href="#3-3-flex-shrink" class="headerlink" title="3.3 flex-shrink"></a>3.3 flex-shrink</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: &lt;number&gt;; <span class="comment">/* 默认为 1 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果空间不足的话则会缩小。</p>
+<hr>
+<h3 id="3-4-flex-basis"><a href="#3-4-flex-basis" class="headerlink" title="3.4 flex-basis"></a>3.4 flex-basis</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="comment">/* 默认为 auto */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>指定项目在主轴方向上的大小。</p>
+<hr>
+<h3 id="3-5-flex"><a href="#3-5-flex" class="headerlink" title="3.5 flex"></a>3.5 flex</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: none | [ &lt;<span class="string">'flex-grow'</span>&gt; &lt;<span class="string">'flex-shrink'</span>&gt;? || &lt;<span class="string">'flex-basis'</span>&gt; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>是<code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code>的简写，<code>flex-shrink</code> 和 <code>flex-basis</code>是可选项。默认值为0， 1， auto。</p>
+<p>注意： 推荐使用这种简写的方式来代替使用单个属性的方式。</p>
+<hr>
+<h3 id="3-6-align-self"><a href="#3-6-align-self" class="headerlink" title="3.6 align-self"></a>3.6 align-self</h3><p> <img src="http://static.cangyuanyuan.com/align-self.png" alt="align-self"></p>
+ <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"> <span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: auto | flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 此属性允许单个项目的对齐方式与他人不一致（同样是start对齐你咋这么优秀呢）。这种方式会覆盖align-items父元素属性。</p>
+<h1 id="4-后记"><a href="#4-后记" class="headerlink" title="4.后记"></a>4.后记</h1><p> 此笔记和所用图片参考与源自<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">阮一峰的博客</a>，和<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">A Complete Guide to Flexbox </a>这篇文章。</p>
+<p>flex的用法很简单易懂，下次会学习并分享grid用法更加复杂的一种网格式布局。</p>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">请作者喝杯咖啡</span>
+      <div class="donation-body">
+        <div class="tip text-center">如果该文章对你来说有一点点小小的帮助的话</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wechatpay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/08/04/hooks-1/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '28588b0814add6b91268',
+  clientSecret: '13cd57d56b987bebb73b8ecad56fbf5885dd2905',
+  repo: 'yycang.github.io',
+  owner: 'yycang',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: location.pathname,
+  admin: ['yycang'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
