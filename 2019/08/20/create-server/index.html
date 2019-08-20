@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>最近买了两台云服务器 | 沧源远的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="服务器,Linux,">
+  
+
+  <meta name="description" content="这两天花了近1K大洋买了两台云服务器。。。没控制住自己的手  第一台: 搬瓦工 原价49.99刀一年，折扣6%，大概46刀左右，折合330人民币 用途是为了搭建ss，再具体的用途就不用我多说了吧 先前vultr的实在是受够了，感觉最快的荷兰阿姆斯特丹机房的都连不上去，而且不能用ip太多了，现在账号还有8刀左右 被折腾够了，买个50刀的省省心，搬瓦工的服务也是逐渐高质量+高收费化，以前19.99刀">
+<meta name="keywords" content="服务器,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最近买了两台云服务器">
+<meta property="og:url" content="http://yoursite.com/2019/08/20/create-server/index.html">
+<meta property="og:site_name" content="沧源远的博客">
+<meta property="og:description" content="这两天花了近1K大洋买了两台云服务器。。。没控制住自己的手  第一台: 搬瓦工 原价49.99刀一年，折扣6%，大概46刀左右，折合330人民币 用途是为了搭建ss，再具体的用途就不用我多说了吧 先前vultr的实在是受够了，感觉最快的荷兰阿姆斯特丹机房的都连不上去，而且不能用ip太多了，现在账号还有8刀左右 被折腾够了，买个50刀的省省心，搬瓦工的服务也是逐渐高质量+高收费化，以前19.99刀">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://static.cangyuanyuan.com/tencent_cloud.png">
+<meta property="og:updated_time" content="2019-08-20T16:02:36.572Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最近买了两台云服务器">
+<meta name="twitter:description" content="这两天花了近1K大洋买了两台云服务器。。。没控制住自己的手  第一台: 搬瓦工 原价49.99刀一年，折扣6%，大概46刀左右，折合330人民币 用途是为了搭建ss，再具体的用途就不用我多说了吧 先前vultr的实在是受够了，感觉最快的荷兰阿姆斯特丹机房的都连不上去，而且不能用ip太多了，现在账号还有8刀左右 被折腾够了，买个50刀的省省心，搬瓦工的服务也是逐渐高质量+高收费化，以前19.99刀">
+<meta name="twitter:image" content="http://static.cangyuanyuan.com/tencent_cloud.png">
+
+  
+
+  
+    <link rel="icon" href="/images/博客.png">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-142874240-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?189f90ebbb4e5a9a36610fa3d1bd9b87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">展开</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">展开</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一台-搬瓦工"><span class="toc-text">第一台: 搬瓦工</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二台-腾讯云"><span class="toc-text">第二台: 腾讯云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接下来打算"><span class="toc-text">接下来打算</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-create-server" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">最近买了两台云服务器</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.08.20</span>
+      </span>
+
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/随笔/">随笔</a>
+  </span>
+
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <blockquote>
+<p>这两天花了近1K大洋买了两台云服务器。。。没控制住自己的手</p>
+</blockquote>
+<h2 id="第一台-搬瓦工"><a href="#第一台-搬瓦工" class="headerlink" title="第一台: 搬瓦工"></a>第一台: 搬瓦工</h2><ul>
+<li>原价49.99刀一年，折扣6%，大概46刀左右，折合330人民币</li>
+<li>用途是为了搭建ss，再具体的用途就不用我多说了吧</li>
+<li>先前vultr的实在是受够了，感觉最快的荷兰阿姆斯特丹机房的都连不上去，而且不能用ip太多了，现在账号还有8刀左右</li>
+<li>被折腾够了，买个50刀的省省心，搬瓦工的服务也是逐渐高质量+高收费化，以前19.99刀一年的日子一去不复返了</li>
+<li>搭建过程，ssh上服务器依次输下面三个命令即可，然后安装提示输入密码、端口和选择加密方式序号</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget — no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>bbr是谷歌出品的一套tcp拥塞控制算法，能提升网速渲染速度，安装过程如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh</span><br><span class="line">chmod +x bbr.sh</span><br><span class="line">./bbr.sh</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装好要重启服务器</li>
+<li>之后配置shadowsocks一下就可以</li>
+</ul>
+<h2 id="第二台-腾讯云"><a href="#第二台-腾讯云" class="headerlink" title="第二台: 腾讯云"></a>第二台: 腾讯云</h2><ul>
+<li>国外的机房国内访问感觉不太稳定，虽然搬瓦工的服务器也能跑些小玩意儿</li>
+<li>看到国内腾讯云新用户折扣有点大，记得比我当时买阿里云的还实惠，见下图（这不是广告。。。</li>
+</ul>
+<p><img src="http://static.cangyuanyuan.com/tencent_cloud.png" alt></p>
+<ul>
+<li>3年2G2M，嗯，只要680，买！</li>
+<li>不愧是国内的机房，ssh连接就是快！</li>
+<li>但是总输入密码和记服务器ip很不爽，果断换成密钥登录</li>
+<li>每个云都会有帮你生成SSH密钥的功能，然后存好下载的与服务器关联的私钥，配置home目录下.ssh文件夹中config文件即可</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host xxx       </span><br><span class="line">    HostName  # 主机地址</span><br><span class="line">    User      # 用户名</span><br><span class="line">    IdentityFile  # 私钥存放的绝对路径</span><br><span class="line">    # port 指定端口</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置好通过 ssh xxx直接登录服务器，省去一大波操作</li>
+<li>chmod 400 &lt;私钥绝对路径&gt;，记得更改一下私钥文件的权限</li>
+</ul>
+<h2 id="接下来打算"><a href="#接下来打算" class="headerlink" title="接下来打算"></a>接下来打算</h2><p>腾讯云服务器是ubuntu系统，也是我学的第一个linux操作系统，用的可能会比较习惯。</p>
+<p>今后可能写的小程序的接口、网站的部署、博客的迁移都会在这上面进行，不过这是后话了。</p>
+<p>近期可以折腾折腾爬虫，爬一些妹子图存储资源（咳咳。</p>
+<pre><code></code></pre>
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">请作者喝杯咖啡</span>
+      <div class="donation-body">
+        <div class="tip text-center">如果该文章对你来说有一点点小小的帮助的话</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wechatpay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/08/11/flex/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '28588b0814add6b91268',
+  clientSecret: '13cd57d56b987bebb73b8ecad56fbf5885dd2905',
+  repo: 'yycang.github.io',
+  owner: 'yycang',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: location.pathname,
+  admin: ['yycang'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
