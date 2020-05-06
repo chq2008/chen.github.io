@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>grid布局 | 沧源远的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="前端,css,">
+  
+
+  <meta name="description" content="很久没想起来写博客了，最近因为某款游戏在写这个游戏的攻略小程序，前端表格就是用grid布局做的，趁热记录一下grid布局。  1.displaygrid据说是css最强大的布局，但是个人在项目中挺少运用到，基本上flex能解决大部分。 使一个容器变成grid布局 .container &amp;#123;  display: grid | inline-grid;&amp;#125;   grid 容器元素为块">
+<meta name="keywords" content="前端,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="grid布局">
+<meta property="og:url" content="http://yoursite.com/2020/05/05/grid/index.html">
+<meta property="og:site_name" content="沧源远的博客">
+<meta property="og:description" content="很久没想起来写博客了，最近因为某款游戏在写这个游戏的攻略小程序，前端表格就是用grid布局做的，趁热记录一下grid布局。  1.displaygrid据说是css最强大的布局，但是个人在项目中挺少运用到，基本上flex能解决大部分。 使一个容器变成grid布局 .container &amp;#123;  display: grid | inline-grid;&amp;#125;   grid 容器元素为块">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-1.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-2.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-6.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-3.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-4.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-5.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-start.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-end.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-center.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-stretch.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-space-around.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-space-between.png">
+<meta property="og:image" content="http://static.cangyuanyuan.com/grid-space-evenly.png">
+<meta property="og:updated_time" content="2020-05-06T15:53:31.533Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="grid布局">
+<meta name="twitter:description" content="很久没想起来写博客了，最近因为某款游戏在写这个游戏的攻略小程序，前端表格就是用grid布局做的，趁热记录一下grid布局。  1.displaygrid据说是css最强大的布局，但是个人在项目中挺少运用到，基本上flex能解决大部分。 使一个容器变成grid布局 .container &amp;#123;  display: grid | inline-grid;&amp;#125;   grid 容器元素为块">
+<meta name="twitter:image" content="http://static.cangyuanyuan.com/grid-1.png">
+
+  
+
+  
+    <link rel="icon" href="/images/博客.png">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-142874240-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?189f90ebbb4e5a9a36610fa3d1bd9b87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">展开</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">展开</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-display"><span class="toc-text">1.display</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-grid-template-columns-grid-template-rows-grid-template-area"><span class="toc-text">2.grid-template-columns/grid-template-rows/grid-template-area</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-column-gap-row-gap"><span class="toc-text">3.column-gap/row-gap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-项目属性"><span class="toc-text">4.项目属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-justify-content-align-content"><span class="toc-text">5.justify-content/align-content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-justify-self-align-self"><span class="toc-text">6.justify-self/align-self</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-后记"><span class="toc-text">7.后记</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-grid" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">grid布局</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2020.05.05</span>
+      </span>
+
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </span>
+
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <blockquote>
+<p>很久没想起来写博客了，最近因为某款游戏在写这个游戏的攻略小程序，前端表格就是用grid布局做的，趁热记录一下grid布局。</p>
+</blockquote>
+<h2 id="1-display"><a href="#1-display" class="headerlink" title="1.display"></a>1.display</h2><p>grid据说是css最强大的布局，但是个人在项目中挺少运用到，基本上flex能解决大部分。</p>
+<p>使一个容器变成grid布局</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid | inline-grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>grid 容器元素为块级元素</li>
+<li>inline-grid 容器元素为行内元素</li>
+</ul>
+<p>注：<br>float，display: inline-block，display: table-cell，vertical-align和column-* 属性在设置grid后会失效。</p>
+<h2 id="2-grid-template-columns-grid-template-rows-grid-template-area"><a href="#2-grid-template-columns-grid-template-rows-grid-template-area" class="headerlink" title="2.grid-template-columns/grid-template-rows/grid-template-area"></a>2.grid-template-columns/grid-template-rows/grid-template-area</h2><p>grid是由行和列组成的栅格，columns定义行，row定义列</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">40px</span> <span class="number">50px</span> auto <span class="number">50px</span> <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">25%</span> <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下</p>
+<p><img src="http://static.cangyuanyuan.com/grid-1.png" alt="效果图1"></p>
+<p>同时也能命名行或列（网格线）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: [first] <span class="number">40px</span> [line2] <span class="number">50px</span> [line3] auto [col4-start] <span class="number">50px</span> [five] <span class="number">40px</span> [end];</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: [row1-start] <span class="number">25%</span> [row1-end] <span class="number">100px</span> [third-line] auto [last-line];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.cangyuanyuan.com/grid-2.png" alt="效果图2"></p>
+<p>每行或每列允许有多个名称，比如下列代码第二行就设定了两个名称</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: [row1-start] <span class="number">25%</span> [row1-end row2-start] <span class="number">25%</span> [row2-end];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果定义中出现重复的部分，可以用repeat()简化代码，repeat接受的第一个参数是重复次数，第二个是重复内容，下面代码中两个css效果是相同的</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(3, 20px [col-start]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">20px</span> [col-start] <span class="number">20px</span> [col-start] <span class="number">20px</span> [col-start];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fr可以划分行列之间的比例，比如将一个容器平均分成3分，可以这样写</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fr搭配像素值，就意味着所有fr比例不得超过像素值，比如下面代码fr的比例是以50px为总量划分</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">50px</span> <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>minmax()会接受两个参数，第一个为单元格最小值，第二个为最大值，这些值还可以为auto。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="built_in">minmax</span>(100px, auto);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>grid-template-area可以划分区域</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-areas</span>:   <span class="string">"header header"</span></span><br><span class="line">                        <span class="string">"content sidebar"</span></span><br><span class="line">                        <span class="string">"footer footer"</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>:    <span class="number">150px</span> <span class="number">1</span>fr <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">200px</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码就是一个布局实例，生成一个3行2列的网格，顶部header，页脚footer，中间左边内容右边侧边栏，如果某些区域不会用到，则可以用<code>.</code>来表示。</p>
+<p><img src="http://static.cangyuanyuan.com/grid-6.png" alt="效果图3"></p>
+<h1 id="3-column-gap-row-gap"><a href="#3-column-gap-row-gap" class="headerlink" title="3.column-gap/row-gap"></a>3.column-gap/row-gap</h1><p>使用column-gap和row-gap属性来创建列和行之间的间距，间距大小任意非负</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">row-gap</span>:    <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">5rem</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上面样式还可以用<code>gap</code>来简写，如果指定两个值则第一个表示row-gap，第二个表示column-gap，如果忽略第二个值，则第一个值同时表示行间距与列间距</p>
+<h2 id="4-项目属性"><a href="#4-项目属性" class="headerlink" title="4.项目属性"></a>4.项目属性</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-row-start</span>:    <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-row-end</span>:      <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-column-end</span>:   <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上四个属性分别意味着网格从第二行到第三行、第二列到第三列所定位的项目1</p>
+<p><img src="http://static.cangyuanyuan.com/grid-3.png" alt="项目属性1"></p>
+<p>当然可以简写，使用/来表示从第几行（列）到第几行（列），如果省略了/，则默认跨越1个网格单位</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-row</span>:    <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">3</span> / <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.cangyuanyuan.com/grid-4.png" alt="项目属性2"></p>
+<p>更简单的可以使用grid-area，指定四个值分别对应<code>grid-row-start</code>,<code>grid-column-start</code>,<code>grid-row-end</code>,<code>grid-column-end</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-area</span>: <span class="number">2</span> / <span class="number">2</span> / <span class="number">3</span> / <span class="number">3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果你在定义表格的样式里就给网格线取名，则还能用网格线的名称来定位到项目，例如</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line">  <span class="attribute">grid-row-start</span>:    row-<span class="number">2</span>-start;</span><br><span class="line">  <span class="attribute">grid-row-end</span>:      row-end;</span><br><span class="line">  <span class="attribute">grid-column-start</span>: col-<span class="number">2</span>-start;</span><br><span class="line">  <span class="attribute">grid-column-end</span>:   col-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.cangyuanyuan.com/grid-5.png" alt="项目属性3"></p>
+<h2 id="5-justify-content-align-content"><a href="#5-justify-content-align-content" class="headerlink" title="5.justify-content/align-content"></a>5.justify-content/align-content</h2><p>与flex相似<br>justify-content：内容区域在容器中的水平位置<br>align-content：内容区域在容器中的垂直位置</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;</span><br><span class="line">  <span class="attribute">align-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>start: 居前</code></p>
+<p><img src="http://static.cangyuanyuan.com/grid-start.png" alt="start"></p>
+<p><code>end: 居后</code></p>
+<p><img src="http://static.cangyuanyuan.com/grid-end.png" alt="end"></p>
+<p><code>center: 居中</code><br><img src="http://static.cangyuanyuan.com/grid-center.png" alt="center"></p>
+<p><code>stretch: 项目大小未指定则拉伸整个容器</code></p>
+<p><img src="http://static.cangyuanyuan.com/grid-stretch.png" alt="stretch"></p>
+<p><code>space-around: 每个项目两侧的间隔相同，则项目之间的间隔会比邻侧多一倍</code></p>
+<p><img src="http://static.cangyuanyuan.com/grid-space-around.png" alt="space-around"></p>
+<p><code>space-between: 项目之间间隔相同，但与邻边无间隔</code><br><img src="http://static.cangyuanyuan.com/grid-space-between.png" alt="space-between"></p>
+<p><code>space-evenly: 项目与项目之间间隔相同，与邻边之间间隔也相同</code><br><img src="http://static.cangyuanyuan.com/grid-space-evenly.png" alt="space-evenly"></p>
+<h2 id="6-justify-self-align-self"><a href="#6-justify-self-align-self" class="headerlink" title="6.justify-self/align-self"></a>6.justify-self/align-self</h2><p>justify-self与align-self是项目中的内容的位置方向，与justify-content和align-self使用方法一致。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">justify-self</span>: start | end | center | stretch;</span><br><span class="line">  <span class="attribute">align-self</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-后记"><a href="#7-后记" class="headerlink" title="7.后记"></a>7.后记</h2><p>本文参考来源<a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener">阮一峰的博客</a>和<a href="https://learncssgrid.com/" target="_blank" rel="noopener">Learn CSS Grid</a>这篇文章。</p>
+<p>关于css的博客可能就告一段落，作为一个前端，还有很长的路要走。</p>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">请作者喝杯咖啡</span>
+      <div class="donation-body">
+        <div class="tip text-center">如果该文章对你来说有一点点小小的帮助的话</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wechatpay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2020/01/01/happy-new-year/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '28588b0814add6b91268',
+  clientSecret: '13cd57d56b987bebb73b8ecad56fbf5885dd2905',
+  repo: 'yycang.github.io',
+  owner: 'yycang',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: location.pathname,
+  admin: ['yycang'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
