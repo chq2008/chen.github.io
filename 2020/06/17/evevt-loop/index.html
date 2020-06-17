@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>宏观任务与微观任务 | 沧源远的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="前端,javascript,">
+  
+
+  <meta name="description" content="一段javascript代码放在javascript引擎中如何去运行，为什么有段代码明明写在前面执行顺序却到了后面，这可能就要稍微需要理解到javascript的执行。  微观任务与宏观任务简单来说，我们将宿主环境（一般是指浏览器）发起的的任务称为宏观任务，将JavaScript引擎发起的任务称为微观任务。 在宏观任务中，Promise还会产生异步代码，JavaScript必须保证这些异步代码在">
+<meta name="keywords" content="前端,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宏观任务与微观任务">
+<meta property="og:url" content="http://yoursite.com/2020/06/17/evevt-loop/index.html">
+<meta property="og:site_name" content="沧源远的博客">
+<meta property="og:description" content="一段javascript代码放在javascript引擎中如何去运行，为什么有段代码明明写在前面执行顺序却到了后面，这可能就要稍微需要理解到javascript的执行。  微观任务与宏观任务简单来说，我们将宿主环境（一般是指浏览器）发起的的任务称为宏观任务，将JavaScript引擎发起的任务称为微观任务。 在宏观任务中，Promise还会产生异步代码，JavaScript必须保证这些异步代码在">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-17T12:44:01.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="宏观任务与微观任务">
+<meta name="twitter:description" content="一段javascript代码放在javascript引擎中如何去运行，为什么有段代码明明写在前面执行顺序却到了后面，这可能就要稍微需要理解到javascript的执行。  微观任务与宏观任务简单来说，我们将宿主环境（一般是指浏览器）发起的的任务称为宏观任务，将JavaScript引擎发起的任务称为微观任务。 在宏观任务中，Promise还会产生异步代码，JavaScript必须保证这些异步代码在">
+
+  
+
+  
+    <link rel="icon" href="/images/博客.png">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-142874240-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?189f90ebbb4e5a9a36610fa3d1bd9b87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">展开</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">展开</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#微观任务与宏观任务"><span class="toc-text">微观任务与宏观任务</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-evevt-loop" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">宏观任务与微观任务</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2020.06.17</span>
+      </span>
+
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </span>
+
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <blockquote>
+<p>一段javascript代码放在javascript引擎中如何去运行，为什么有段代码明明写在前面执行顺序却到了后面，这可能就要稍微需要理解到javascript的执行。</p>
+</blockquote>
+<h2 id="微观任务与宏观任务"><a href="#微观任务与宏观任务" class="headerlink" title="微观任务与宏观任务"></a>微观任务与宏观任务</h2><p>简单来说，我们将宿主环境（一般是指浏览器）发起的的任务称为宏观任务，将JavaScript引擎发起的任务称为微观任务。</p>
+<p>在宏观任务中，Promise还会产生异步代码，JavaScript必须保证这些异步代码在一个宏观任务中完成，所以，每个宏观任务还会包含若干个微观任务。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a"</span>)</span><br><span class="line">  resolve()</span><br><span class="line">&#125;)</span><br><span class="line">a.then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"c"</span>))</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上面那段代码，由于promise的resolve是一个异步机制，所以c会在b之后打印出来。</p>
+<p>接下来试试使用setTimeout</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a"</span>)</span><br><span class="line">  resolve()</span><br><span class="line">&#125;)</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"d"</span>), <span class="number">0</span>)</span><br><span class="line">a.then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"c"</span>))</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>无论代码顺序如何，d都会在最后被打印出，这是因为setTimeout属于浏览器的API，属于宏观任务，<code>而微观任务一直优先于宏观任务</code>。</p>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">请作者喝杯咖啡</span>
+      <div class="donation-body">
+        <div class="tip text-center">如果该文章对你来说有一点点小小的帮助的话</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wechatpay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2020/05/05/grid/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '28588b0814add6b91268',
+  clientSecret: '13cd57d56b987bebb73b8ecad56fbf5885dd2905',
+  repo: 'yycang.github.io',
+  owner: 'yycang',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: location.pathname,
+  admin: ['yycang'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
